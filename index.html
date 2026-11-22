@@ -18,11 +18,7 @@
       --text-sub: rgba(242, 244, 248, 0.65);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       background-color: var(--bg-space);
@@ -34,7 +30,6 @@
       position: relative;
     }
 
-    /* 深宇宙オーロラプリズム＆微細グリッド背景 */
     .cosmos-bg {
       position: fixed;
       inset: 0;
@@ -63,7 +58,6 @@
       padding: 40px 20px 80px;
     }
 
-    /* ヘッダー / トップポータル */
     header {
       text-align: center;
       padding: 36px 20px 44px;
@@ -144,10 +138,7 @@
       margin-top: 2px;
     }
 
-    /* セクション共通 */
-    section {
-      margin-bottom: 52px;
-    }
+    section { margin-bottom: 52px; }
 
     .sec-header {
       display: flex;
@@ -178,7 +169,6 @@
       background: linear-gradient(90deg, var(--silver-border), transparent);
     }
 
-    /* スモークガラスパネル */
     .glass-panel {
       background: var(--glass-bg);
       backdrop-filter: blur(14px);
@@ -199,7 +189,6 @@
       background: var(--gold-accent);
     }
 
-    /* 01 // PERSONNEL ARCHIVE */
     .member-tabs {
       display: flex;
       flex-wrap: wrap;
@@ -219,10 +208,7 @@
       transition: all 0.25s ease;
     }
 
-    .tab-btn:hover {
-      border-color: var(--gold-dim);
-      color: #FFFFFF;
-    }
+    .tab-btn:hover { border-color: var(--gold-dim); color: #FFFFFF; }
 
     .tab-btn.active {
       background: rgba(226, 198, 145, 0.16);
@@ -231,10 +217,7 @@
       box-shadow: 0 0 12px rgba(226, 198, 145, 0.18);
     }
 
-    .profile-card {
-      position: relative;
-      min-height: 210px;
-    }
+    .profile-card { position: relative; min-height: 210px; }
 
     .watermark-en {
       position: absolute;
@@ -266,26 +249,10 @@
       border-bottom: 1px solid var(--silver-border);
     }
 
-    .member-jp {
-      font-size: 1.55rem;
-      font-weight: 500;
-      letter-spacing: 0.14em;
-    }
+    .member-jp { font-size: 1.55rem; font-weight: 500; letter-spacing: 0.14em; }
+    .member-en { font-family: 'Cinzel', serif; font-size: 0.95rem; color: var(--text-sub); letter-spacing: 0.2em; }
+    .member-desc { font-size: 0.94rem; color: var(--text-main); line-height: 1.9; }
 
-    .member-en {
-      font-family: 'Cinzel', serif;
-      font-size: 0.95rem;
-      color: var(--text-sub);
-      letter-spacing: 0.2em;
-    }
-
-    .member-desc {
-      font-size: 0.94rem;
-      color: var(--text-main);
-      line-height: 1.9;
-    }
-
-    /* メンバー個人TikTokリンク（PERSONAL COMMS） */
     .personal-comms-box {
       margin-top: 22px;
       padding-top: 16px;
@@ -334,17 +301,8 @@
       letter-spacing: 0.14em;
     }
 
-    /* 02 // TRANSMISSION TERMINAL (応援コメントコピー) */
-    .terminal-note {
-      font-size: 0.84rem;
-      color: var(--text-sub);
-      margin-bottom: 16px;
-    }
-
-    .phrase-list {
-      display: grid;
-      gap: 10px;
-    }
+    .terminal-note { font-size: 0.84rem; color: var(--text-sub); margin-bottom: 16px; }
+    .phrase-list { display: grid; gap: 10px; }
 
     .phrase-item {
       display: flex;
@@ -356,17 +314,8 @@
       border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .phrase-cn {
-      font-size: 1rem;
-      color: #FFFFFF;
-      letter-spacing: 0.06em;
-    }
-
-    .phrase-jp {
-      font-size: 0.78rem;
-      color: var(--text-sub);
-      margin-top: 2px;
-    }
+    .phrase-cn { font-size: 1rem; color: #FFFFFF; letter-spacing: 0.06em; }
+    .phrase-jp { font-size: 0.78rem; color: var(--text-sub); margin-top: 2px; }
 
     .copy-btn {
       background: transparent;
@@ -381,37 +330,40 @@
       transition: all 0.25s ease;
     }
 
-    .copy-btn:hover {
-      background: rgba(226, 198, 145, 0.15);
-      border-color: var(--gold-accent);
-    }
+    .copy-btn:hover { background: rgba(226, 198, 145, 0.15); border-color: var(--gold-accent); }
+    .copy-btn.copied { background: var(--gold-accent); color: #06080F; font-weight: 500; }
 
-    .copy-btn.copied {
-      background: var(--gold-accent);
-      color: #06080F;
-      font-weight: 500;
-    }
-
-    /* 03 // SYSTEM & ACCESS */
-    .info-grid {
-      display: grid;
-      gap: 18px;
-    }
-
-    .info-block h3 {
-      font-size: 0.95rem;
-      color: var(--gold-accent);
-      letter-spacing: 0.1em;
-      margin-bottom: 6px;
-      font-weight: 500;
-    }
-
-    .info-block p {
-      font-size: 0.88rem;
-      color: var(--text-sub);
-    }
+    .info-grid { display: grid; gap: 18px; }
+    .info-block h3 { font-size: 0.95rem; color: var(--gold-accent); letter-spacing: 0.1em; margin-bottom: 6px; font-weight: 500; }
+    .info-block p { font-size: 0.88rem; color: var(--text-sub); }
 
     .web-charge-link {
       display: inline-block;
       margin-top: 10px;
       color: var(--gold-accent);
+      font-size: 0.84rem;
+      text-decoration: none;
+      border-bottom: 1px solid var(--gold-dim);
+      padding-bottom: 2px;
+    }
+
+    .web-charge-link:hover { border-color: var(--gold-accent); }
+
+    footer {
+      text-align: center;
+      padding-top: 32px;
+      border-top: 1px solid var(--silver-border);
+      font-size: 0.78rem;
+      color: var(--text-sub);
+    }
+
+    .disclaimer {
+      max-width: 640px;
+      margin: 0 auto 16px;
+      line-height: 1.7;
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    .archive-credit {
+      font-family: 'Cinzel', serif;
