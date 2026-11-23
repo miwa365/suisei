@@ -1378,6 +1378,17 @@
     .phrase-cn { font-family: 'Noto Serif SC', 'Shippori Mincho', serif; }
     html:lang(en) .care-body p, html:lang(fil) .care-body p { line-height: 1.95; }
 
+    .embed-stack { display: flex; flex-direction: column; align-items: center; gap: 12px; width: 100%; }
+    .embed-open-link {
+      font-family: 'Montserrat', 'Noto Serif SC', 'Shippori Mincho', sans-serif;
+      font-size: 0.74rem;
+      letter-spacing: 0.1em;
+      color: var(--ice);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(205, 235, 255, 0.35);
+      padding-bottom: 2px;
+    }
+    .embed-open-link:hover { color: #fff; border-color: #fff; }
     .nowrap { display: inline-block; }
     .em-strong { color: #fff; font-weight: 500; }
     .care-card h3 em { font-style: normal; }
@@ -1915,6 +1926,8 @@
         privateMsg: (n) => n + " の個人アカウントは非公開設定です。応援は公式配信枠からご参加いただけます。",
         followMain: "まずは公式配信枠をフォローしてライブ配信をチェック！",
         viewMain: "公式配信枠 @sofiatori64 を見る",
+        embedError: "この動画はサイト内で再生できませんでした。TikTokで直接ご覧ください。",
+        openOnTikTok: "TikTokで見る",
         starAria: (n) => n + "を表示",
         emblemAria: (n) => n + "のエンブレム",
         mapAria: "7つ星マップ（メンバー選択）"
@@ -1928,6 +1941,8 @@
         privateMsg: (n) => n + "'s personal account is private. You can support him through the official live account.",
         followMain: "First, follow the official live account and catch the stream!",
         viewMain: "View official live account @sofiatori64",
+        embedError: "This video couldn't be played on this site. Please watch it directly on TikTok.",
+        openOnTikTok: "Watch on TikTok",
         starAria: (n) => "Show " + n,
         emblemAria: (n) => n + " emblem",
         mapAria: "Seven-star map (member select)",
@@ -1985,6 +2000,8 @@
         privateMsg: (n) => n + "的个人账号为私密状态。可以在官方直播间参与应援。",
         followMain: "先关注官方直播间，来看直播吧！",
         viewMain: "查看官方直播间 @sofiatori64",
+        embedError: "该视频无法在本站播放，请直接在TikTok观看。",
+        openOnTikTok: "在TikTok观看",
         starAria: (n) => "显示" + n,
         emblemAria: (n) => n + "的徽章",
         mapAria: "七星地图（选择成员）",
@@ -2042,6 +2059,8 @@
         privateMsg: (n) => "Naka-private ang personal account ni " + n + ". Maaari kang sumuporta sa official live account.",
         followMain: "I-follow muna ang official live account at abangan ang live!",
         viewMain: "Tingnan ang official live account @sofiatori64",
+        embedError: "Hindi ma-play ang video na ito sa site. Panoorin ito nang direkta sa TikTok.",
+        openOnTikTok: "Panoorin sa TikTok",
         starAria: (n) => "Ipakita si " + n,
         emblemAria: (n) => "Emblem ni " + n,
         mapAria: "Seven-star map (pumili ng member)",
@@ -2203,12 +2222,23 @@
           "https://www.tiktok.com/player/v1/" +
           encodeURIComponent(videoId) +
           "?embed_from=webapp_share&music_info=1&description=1&autoplay=1&muted=1";
+        const watchUrl = videoUrl || ("https://www.tiktok.com/@" + encodeURIComponent(cleanId) + "/video/" + encodeURIComponent(videoId));
         const existing = slotEl.querySelector("iframe");
-        if (existing && existing.getAttribute("src") === playerSrc) return; // 言語切替時は再読込しない
+        if (existing && existing.getAttribute("src") === playerSrc) {
+          // 言語切替時は動画を再読込せず、リンク文言だけ更新
+          const lbl = slotEl.querySelector(".embed-open-label");
+          if (lbl) lbl.textContent = T("openOnTikTok");
+          return;
+        }
+        slotEl.dataset.watchUrl = watchUrl;
         slotEl.innerHTML =
+          '<div class="embed-stack">' +
           '<iframe class="tiktok-player-iframe" src="' + playerSrc + '" ' +
           'frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share" ' +
-          'title="' + (member.videoTitle || member.jpName + " TikTok") + '" allowfullscreen loading="lazy"></iframe>';
+          'title="' + (member.videoTitle || member.jpName + " TikTok") + '" allowfullscreen loading="lazy"></iframe>' +
+          '<a href="' + watchUrl + '" target="_blank" rel="noopener noreferrer" class="embed-open-link">' +
+          '<span class="embed-open-label">' + T("openOnTikTok") + '</span> ↗</a>' +
+          '</div>';
       } else if (!member.isPrivate && videoUrl !== "") {
         captionEl.textContent = T("pickupCaption")(member.jpName, "");
         slotEl.innerHTML =
@@ -2230,6 +2260,28 @@
           '</div>';
       }
     }
+
+    /* ---------- TikTokプレーヤーのエラー時はリンク表示に切り替え ---------- */
+    function showEmbedFallback() {
+      const slotEl = document.getElementById("tiktok-embed-slot");
+      const url = slotEl.dataset.watchUrl;
+      if (!url || !slotEl.querySelector("iframe")) return;
+      slotEl.innerHTML =
+        '<div style="text-align:center; padding: 12px 8px;">' +
+        '<p style="font-size:0.84rem; color:rgba(238,243,255,0.82); margin-bottom:12px;">' + T("embedError") + '</p>' +
+        '<a href="' + url + '" target="_blank" rel="noopener noreferrer" class="comms-link-btn video-btn">' +
+        '<span>▶ ' + T("openOnTikTok") + '</span><span>↗</span></a>' +
+        '</div>';
+    }
+
+    window.addEventListener("message", (e) => {
+      if (!/(^|\.)tiktok\.com$/.test((() => { try { return new URL(e.origin).hostname; } catch (_) { return ""; } })())) return;
+      let data = e.data;
+      if (typeof data === "string") { try { data = JSON.parse(data); } catch (_) { return; } }
+      if (data && data["x-tiktok-player"] && data.type === "onPlayerError") {
+        showEmbedFallback();
+      }
+    });
 
     /* ---------- タブ ---------- */
     const tabsContainer = document.getElementById("tabs-nav");
