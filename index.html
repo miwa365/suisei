@@ -349,4 +349,568 @@
       margin-bottom: 10px;
     }
 
-    .member-jp { font-size: 1.55rem; font-weight: 500; letter-spacing:
+    .member-jp { font-size: 1.55rem; font-weight: 500; letter-spacing: 0.14em; }
+    .member-en { font-family: 'Cinzel', serif; font-size: 0.95rem; color: var(--text-sub); letter-spacing: 0.2em; }
+    .member-fanmark { font-size: 0.85rem; color: var(--gold-accent); }
+
+    .support-item-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      background: rgba(226, 198, 145, 0.1);
+      border: 1px solid rgba(226, 198, 145, 0.42);
+      color: var(--gold-accent);
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+    }
+
+    @media (max-width: 520px) {
+      .profile-top-grid {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .portrait-frame {
+        width: 124px;
+        height: 124px;
+      }
+    }
+
+    .member-desc { font-size: 0.94rem; color: var(--text-main); line-height: 1.9; }
+
+    .personal-comms-box {
+      margin-top: 22px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .comms-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    .comms-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .comms-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 16px;
+      background: rgba(226, 198, 145, 0.1);
+      border: 1px solid rgba(226, 198, 145, 0.6);
+      color: var(--gold-accent);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+
+    .comms-link-btn.video-btn {
+      background: linear-gradient(135deg, rgba(226, 198, 145, 0.2), rgba(125, 211, 252, 0.08));
+      border-color: var(--gold-accent);
+      color: #FFFFFF;
+    }
+
+    .comms-link-btn:hover {
+      background: rgba(226, 198, 145, 0.24);
+    }
+
+    .comms-private-note {
+      display: inline-block;
+      padding: 6px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: rgba(255, 255, 255, 0.55);
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+    }
+
+    .tiktok-embed-container {
+      margin-top: 20px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .embed-caption {
+      font-size: 0.78rem;
+      color: var(--text-sub);
+      margin-bottom: 12px;
+    }
+
+    .embed-frame-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 120px;
+      padding: 16px;
+      background: rgba(6, 8, 15, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .tiktok-player-iframe {
+      width: 325px;
+      max-width: 100%;
+      height: 578px;
+      border: 1px solid rgba(226, 198, 145, 0.35);
+      background: #06080F;
+    }
+
+    .terminal-note { font-size: 0.84rem; color: var(--text-sub); margin-bottom: 16px; }
+    .phrase-list { display: grid; gap: 10px; }
+
+    .phrase-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.035), rgba(125, 211, 252, 0.02));
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    }
+
+    .phrase-cn { font-size: 1rem; color: #FFFFFF; letter-spacing: 0.06em; }
+    .phrase-jp { font-size: 0.78rem; color: var(--text-sub); margin-top: 2px; }
+
+    .copy-btn {
+      background: rgba(226, 198, 145, 0.06);
+      border: 1px solid var(--gold-dim);
+      color: var(--gold-accent);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      padding: 7px 14px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+
+    .copy-btn:hover {
+      background: rgba(226, 198, 145, 0.16);
+      border-color: var(--gold-accent);
+    }
+
+    .copy-btn.copied { background: var(--gold-accent); color: #06080F; font-weight: 500; }
+
+    .info-grid { display: grid; gap: 18px; }
+    .info-block h3 { font-size: 0.95rem; color: var(--gold-accent); letter-spacing: 0.1em; margin-bottom: 6px; font-weight: 500; }
+    .info-block p { font-size: 0.88rem; color: var(--text-sub); }
+
+    .web-charge-link {
+      display: inline-block;
+      margin-top: 10px;
+      color: var(--gold-accent);
+      font-size: 0.84rem;
+      text-decoration: none;
+      border-bottom: 1px solid var(--gold-dim);
+      padding-bottom: 2px;
+    }
+
+    footer {
+      text-align: center;
+      padding-top: 32px;
+      border-top: 1px solid var(--silver-border);
+      font-size: 0.78rem;
+      color: var(--text-sub);
+    }
+
+    .disclaimer {
+      max-width: 640px;
+      margin: 0 auto 16px;
+      line-height: 1.7;
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.48);
+    }
+
+    .archive-credit {
+      font-family: 'Cinzel', serif;
+      letter-spacing: 0.24em;
+      color: var(--gold-accent);
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="cosmos-prism-layer" aria-hidden="true"></div>
+  <div class="starfield-layer" aria-hidden="true"></div>
+
+  <main class="main-wrapper">
+    <header>
+      <div class="goal-banner">MISSION GOAL // 配信TikTokアカウント 10,000フォロワー達成＆応援拡大</div>
+      <span class="sys-tag">UNOFFICIAL OBSERVATION TERMINAL // JP</span>
+      <h1>XL-001 彗星</h1>
+      <p class="subtitle">深宇宙を駆ける7つの光跡を観測・記録する非公式ファンアーカイブ</p>
+      <div class="portal-links">
+        <a href="https://www.tiktok.com/@sofiatori64" target="_blank" rel="noopener noreferrer" class="btn-portal">
+          <span class="btn-portal-label">MAIN STREAM // 01</span>
+          <span class="btn-portal-main">XL-001彗星 (@sofiatori64) ↗</span>
+        </a>
+        <a href="https://www.tiktok.com/@xl0027788" target="_blank" rel="noopener noreferrer" class="btn-portal sub">
+          <span class="btn-portal-label">SUB STREAM // 02</span>
+          <span class="btn-portal-main">XL-002彗星 (@xl0027788) ↗</span>
+        </a>
+      </div>
+    </header>
+
+    <section>
+      <div class="sec-header">
+        <span class="sec-num">01</span>
+        <h2 class="sec-title">PERSONNEL ARCHIVE</h2>
+        <div class="sec-line"></div>
+      </div>
+
+      <div class="tabs-nav" id="tabs-nav"></div>
+
+      <div class="glass-panel">
+        <div class="watermark-en" id="wm-en">KAZUKI</div>
+
+        <div class="profile-top-grid">
+          <div class="portrait-frame" id="m-portrait-box"></div>
+          <div class="profile-head-meta">
+            <div class="member-role" id="m-role">SINCERE PERFORMER</div>
+            <div class="member-name-row">
+              <span class="member-jp" id="m-jp">和希</span>
+              <span class="member-en" id="m-en">KAZUKI</span>
+              <span class="member-fanmark" id="m-fanmark"></span>
+            </div>
+            <div class="support-item-badge" id="m-support-item">応援アイテム：ショートケーキ</div>
+          </div>
+        </div>
+
+        <p class="member-desc" id="m-desc"></p>
+
+        <div class="personal-comms-box">
+          <span class="comms-label">PERSONAL FREQUENCY // TIKTOK</span>
+          <div class="comms-actions" id="member-tiktok-area"></div>
+        </div>
+
+        <div class="tiktok-embed-container">
+          <p class="embed-caption" id="embed-caption"></p>
+          <div class="embed-frame-box" id="tiktok-embed-slot"></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-header">
+        <span class="sec-num">02</span>
+        <h2 class="sec-title">TRANSMISSION TERMINAL</h2>
+        <div class="sec-line"></div>
+      </div>
+
+      <div class="glass-panel">
+        <p class="terminal-note">配信中のコメント欄にそのまま貼り付けて使える応援フレーズです。タップでコピーできます。</p>
+        <div class="phrase-list" id="phrase-list"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-header">
+        <span class="sec-num">03</span>
+        <h2 class="sec-title">SYSTEM &amp; ACCESS</h2>
+        <div class="sec-line"></div>
+      </div>
+
+      <div class="glass-panel info-grid">
+        <div class="info-block">
+          <h3>OBSERVATION SCHEDULE // 配信時間帯の目安</h3>
+          <p>日本時間 18:00 〜 24:00 頃にメイン枠（@sofiatori64）または予備枠（@xl0027788）にてライブ配信が行われます。直近の目標は配信アカウント10,000フォロワー到達！日本語の挨拶やコメントにも誠実に応えてくれます。</p>
+        </div>
+        <div class="info-block">
+          <h3>SUPPORT GUIDE // お得なWebブラウザ版チャージ</h3>
+          <p>TikTokアプリ内から直接コインを購入するよりも、公式Webブラウザ版からチャージすることで手数料が抑えられ、約25〜30%お得に応援ギフトを送ることができます。</p>
+          <a href="https://www.tiktok.com/coin" target="_blank" rel="noopener noreferrer" class="web-charge-link">TikTok公式Webチャージページを開く ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p class="disclaimer">
+        【免責事項 / DISCLAIMER】<br>
+        当サイトは日本の個人制作者による完全非公式のファンアーカイブであり、所属事務所・運営会社・メンバー本人とは一切関係ありません。著作権および規約遵守のため、公式画像や配信スクリーンショットの無断転載は行っておりません。
+      </p>
+      <p class="archive-credit">Presented by SHINMICHI ARCHIVE</p>
+    </footer>
+  </main>
+
+  <script>
+    const membersData = [
+      {
+        enName: "KAZUKI",
+        jpName: "和希",
+        portraitSrc: "assets/kazuki.png",
+        fanmark: "",
+        supportItem: "ショートケーキ",
+        role: "SINCERE PERFORMER",
+        tiktokId: "tyleryu949048",
+        tiktokLabel: "かずき(和希) (@tyleryu949048)",
+        isPrivate: true,
+        featuredVideoUrl: "",
+        featuredVideoId: "",
+        videoTitle: "",
+        desc: "ステージで見せる端正なダンスと、休演日のオフ配信（キッチン配信等）で見せる家庭的な素顔のギャップが魅力の努力家。ちいかわ、クレヨンしんちゃん、RADWIMPSなど日本のカルチャーを愛し、コメント一つひとつにも真摯に答える誠実な青年。"
+      },
+      {
+        enName: "KK",
+        jpName: "キキ",
+        portraitSrc: "assets/kk.png",
+        fanmark: "",
+        supportItem: "ペンライト",
+        role: "ABSOLUTE CENTER & ACE",
+        tiktokId: "lily494494",
+        tiktokLabel: "kk✨ (@lily494494)",
+        isPrivate: false,
+        featuredVideoUrl: "https://vt.tiktok.com/ZSsR5yQ14/",
+        featuredVideoId: "7708492150375222546",
+        videoTitle: "kisskiss",
+        desc: "24歳・絶対的センター＆エース。鍛え抜かれた筋肉質なスタイルと圧倒的なダンススキルを持ち、常にセンターでチームを牽引。カメラの目の前まで迫る強烈なファンサービスが持ち味。"
+      },
+      {
+        enName: "MIO",
+        jpName: "澪",
+        portraitSrc: "assets/mio.png",
+        fanmark: "☁️",
+        supportItem: "アイスクリーム",
+        role: "TALL & GENTLE CHARM",
+        tiktokId: "cunjietk04",
+        tiktokLabel: "みお☁️ (@cunjietk04)",
+        isPrivate: false,
+        featuredVideoUrl: "https://vt.tiktok.com/ZSsR5XgDG/",
+        featuredVideoId: "7710560142550420756",
+        videoTitle: "横顔！",
+        desc: "長身スタイルとENHYPENジェイ似の洗練されたルックスが印象的。右腕に驚くほどのタトゥーを入れているけれど、とても優しい人柄とのギャップが魅力（担当ギフト目安：アイスクリーム 157コインなど）。"
+      },
+      {
+        enName: "TANJUN",
+        jpName: "単純",
+        portraitSrc: "assets/tanjun.png",
+        fanmark: "",
+        supportItem: "バラ",
+        role: "BRIGHT & PASSIONATE",
+        tiktokId: "yxb_0824",
+        tiktokLabel: "單純たんじゅん (@yxb_0824)",
+        isPrivate: false,
+        featuredVideoUrl: "https://vt.tiktok.com/ZSsR5m9K1/",
+        featuredVideoId: "7708050522464406805",
+        videoTitle: "世界に、私を愛してくれる人が一人足りない#伤心",
+        desc: "真っ直ぐな情熱と全力パフォーマンスでチームの空気を明るく照らす愛されキャラクター。観る者にエネルギーを届けるストレートな表現力が武器。"
+      },
+      {
+        enName: "AME",
+        jpName: "雨",
+        portraitSrc: "assets/ame.png",
+        fanmark: "【🌧️🍭】",
+        supportItem: "ラブレター",
+        role: "COOL & SWEET",
+        tiktokId: "jocelynk333",
+        tiktokLabel: "あめ 雨, 🍭 (@jocelynk333)",
+        isPrivate: false,
+        featuredVideoUrl: "https://vt.tiktok.com/ZSsR5HWka/",
+        featuredVideoId: "7709147739547929876",
+        videoTitle: "Live streaming now",
+        desc: "洗練されたシルエットと繊細な表現力、そしてふとした瞬間に見せる甘い笑顔のギャップが魅力。素直で誠実な人柄や料理上手な一面も人気。"
+      },
+      {
+        enName: "SHIN",
+        jpName: "真",
+        portraitSrc: "assets/shin.png",
+        fanmark: "",
+        supportItem: "ハート笑顔",
+        role: "ROYAL VISUAL",
+        tiktokId: "abzozxohc4",
+        tiktokLabel: "真 しん (@abzozxohc4)",
+        isPrivate: false,
+        featuredVideoUrl: "https://vt.tiktok.com/ZSsR5seYk/",
+        featuredVideoId: "7710577096266878226",
+        videoTitle: "",
+        desc: "端正な顔立ちと気品ある立ち姿でフォーメーション全体を美しく引き締める王道ビジュアル担当。一挙手一投足に凛とした華がある。"
+      },
+      {
+        enName: "KOUKI",
+        jpName: "航希",
+        portraitSrc: "assets/kouki.png",
+        fanmark: "",
+        supportItem: "GGステッカー",
+        role: "SHORT JACKET & DIMPLE",
+        tiktokId: "tysinado73e",
+        tiktokLabel: "航希 (@tysinado73e)",
+        isPrivate: false,
+        featuredVideoUrl: "https://vt.tiktok.com/ZSsR5Vs2r/",
+        featuredVideoId: "7697598830270811400",
+        videoTitle: "#侧脸",
+        desc: "高身長ではないものの、ショート丈ジャケットがよく似合うスタイリッシュな着こなしとかわいいえくぼが魅力。配信終盤まで落ちないスタミナと情熱で盛り上げる。"
+      }
+    ];
+
+    const phrasesData = [
+      { cn: "晚上好！从日本来应援你们✨", jp: "こんばんは！日本から応援しています✨" },
+      { cn: "跳舞太帅了！！", jp: "ダンスがすごくかっこいいです！！" },
+      { cn: "和希加油！一直在支持你🤍", jp: "和希がんばれ！ずっと応援してるよ🤍" },
+      { cn: "KK好帅！舞台魅力满分🔥", jp: "キキかっこいい！ステージの魅力満点🔥" },
+      { cn: "辛苦了，注意休息哦！", jp: "お疲れさま、ゆっくり休んでね！" }
+    ];
+
+    function renderPortrait(member) {
+      const box = document.getElementById("m-portrait-box");
+      const fallbackHtml = '<span class="portrait-fallback">' + member.enName.slice(0, 2) + '</span>';
+      if (!member.portraitSrc) {
+        box.innerHTML = fallbackHtml;
+        return;
+      }
+      const img = document.createElement("img");
+      img.src = member.portraitSrc;
+      img.alt = member.jpName + "（" + member.enName + "）イメージイラスト";
+      img.onerror = () => {
+        box.innerHTML = fallbackHtml;
+      };
+      box.innerHTML = "";
+      box.appendChild(img);
+    }
+
+    function renderTikTokEmbed(member, cleanId) {
+      const captionEl = document.getElementById("embed-caption");
+      const slotEl = document.getElementById("tiktok-embed-slot");
+      const videoId = (member.featuredVideoId || "").trim();
+      const videoUrl = (member.featuredVideoUrl || "").trim();
+
+      if (!member.isPrivate && cleanId !== "" && videoId !== "") {
+        const titleText = member.videoTitle ? " - " + member.videoTitle : "";
+        captionEl.textContent = member.jpName + " のピックアップTikTok動画" + titleText;
+        const playerSrc =
+          "https://www.tiktok.com/player/v1/" +
+          encodeURIComponent(videoId) +
+          "?embed_from=webapp_share&music_info=1&description=1&autoplay=1&muted=1";
+        slotEl.innerHTML =
+          '<iframe class="tiktok-player-iframe" src="' + playerSrc + '" ' +
+          'frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share" ' +
+          'title="' + (member.videoTitle || member.jpName + " TikTok") + '" allowfullscreen loading="lazy"></iframe>';
+      } else if (!member.isPrivate && videoUrl !== "") {
+        captionEl.textContent = member.jpName + " のピックアップTikTok動画";
+        slotEl.innerHTML =
+          '<div style="text-align:center; padding: 12px 8px;">' +
+          '<p style="font-size:0.84rem; color:rgba(242,244,248,0.82); margin-bottom:12px;">' +
+          member.jpName + ' のおすすめ動画をTikTokでチェック！フォロー＆いいねで応援しよう✨</p>' +
+          '<a href="' + videoUrl + '" target="_blank" rel="noopener noreferrer" class="comms-link-btn video-btn">' +
+          '<span>▶ ' + member.jpName + ' のピックアップ動画を再生</span><span>↗</span></a>' +
+          '</div>';
+      } else {
+        captionEl.textContent = "配信アカウント（10,000フォロワー目標）へのアクセス";
+        slotEl.innerHTML =
+          '<div style="text-align:center; padding: 10px 6px;">' +
+          '<p style="font-size:0.84rem; color:rgba(242,244,248,0.78); margin-bottom:10px;">' +
+          (member.isPrivate
+            ? member.jpName + " の個人アカウントは非公開設定です。応援は公式配信枠からご参加いただけます。"
+            : "まずは公式配信枠をフォローしてライブ配信をチェック！") +
+          '</p>' +
+          '<a href="https://www.tiktok.com/@sofiatori64" target="_blank" rel="noopener noreferrer" class="comms-link-btn">' +
+          '<span>公式配信枠 @sofiatori64 を見る</span><span>↗</span></a>' +
+          '</div>';
+      }
+    }
+
+    const tabsContainer = document.getElementById("tabs-nav");
+    membersData.forEach((m, idx) => {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "tab-btn" + (idx === 0 ? " active" : "");
+      btn.textContent = m.jpName + " // " + m.enName;
+      btn.onclick = () => selectMember(idx);
+      tabsContainer.appendChild(btn);
+    });
+
+    function selectMember(index) {
+      document.querySelectorAll(".tab-btn").forEach((b, i) => {
+        b.classList.toggle("active", i === index);
+      });
+      const m = membersData[index];
+      renderPortrait(m);
+      document.getElementById("wm-en").textContent = m.enName;
+      document.getElementById("m-role").textContent = m.role;
+      document.getElementById("m-jp").textContent = m.jpName;
+      document.getElementById("m-en").textContent = m.enName;
+      document.getElementById("m-fanmark").textContent = m.fanmark ? "FANMARK " + m.fanmark : "";
+      document.getElementById("m-support-item").textContent = "応援アイテム：" + m.supportItem;
+      document.getElementById("m-desc").textContent = m.desc;
+
+      const tiktokArea = document.getElementById("member-tiktok-area");
+      const cleanId = (m.tiktokId || "").trim().replace(/^@/, "");
+      const videoUrl = (m.featuredVideoUrl || "").trim();
+
+      if (m.isPrivate) {
+        tiktokArea.innerHTML = '<span class="comms-private-note">PRIVATE ACCOUNT // @' + cleanId + '</span>';
+      } else if (cleanId !== "") {
+        const label = (m.tiktokLabel && m.tiktokLabel.trim() !== "") ? m.tiktokLabel : "@" + cleanId;
+        let html = '<a href="https://www.tiktok.com/@' + encodeURIComponent(cleanId) + '" target="_blank" rel="noopener noreferrer" class="comms-link-btn"><span>' + label + '</span><span>↗</span></a>';
+        if (videoUrl !== "") {
+          html += '<a href="' + videoUrl + '" target="_blank" rel="noopener noreferrer" class="comms-link-btn video-btn"><span>▶ PICKUP VIDEO</span><span>↗</span></a>';
+        }
+        tiktokArea.innerHTML = html;
+      } else {
+        tiktokArea.innerHTML = '<span class="comms-private-note">SIGNAL ENCRYPTED // NO PUBLIC ID</span>';
+      }
+
+      renderTikTokEmbed(m, cleanId);
+    }
+
+    function copyTextFallback(text) {
+      const textarea = document.createElement("textarea");
+      textarea.value = text;
+      textarea.setAttribute("readonly", "");
+      textarea.style.position = "fixed";
+      textarea.style.opacity = "0";
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand("copy");
+      } finally {
+        document.body.removeChild(textarea);
+      }
+    }
+
+    function showCopiedState(btn) {
+      btn.textContent = "COPIED";
+      btn.classList.add("copied");
+      setTimeout(() => {
+        btn.textContent = "COPY";
+        btn.classList.remove("copied");
+      }, 1500);
+    }
+
+    const phraseList = document.getElementById("phrase-list");
+    phrasesData.forEach((p) => {
+      const item = document.createElement("div");
+      item.className = "phrase-item";
+      item.innerHTML = '<div><div class="phrase-cn">' + p.cn + '</div><div class="phrase-jp">' + p.jp + '</div></div><button type="button" class="copy-btn">COPY</button>';
+      const btn = item.querySelector(".copy-btn");
+      btn.onclick = () => {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(p.cn).then(() => {
+            showCopiedState(btn);
+          }).catch(() => {
+            copyTextFallback(p.cn);
+            showCopiedState(btn);
+          });
+        } else {
+          copyTextFallback(p.cn);
+          showCopiedState(btn);
+        }
+      };
+      phraseList.appendChild(item);
+    });
+
+    selectMember(0);
+  </script>
+</body>
+</html>
