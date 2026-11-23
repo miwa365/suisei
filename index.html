@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#06080F">
   <title>XL-001 彗星 | UNOFFICIAL OBSERVATION ARCHIVE</title>
-  <meta name="description" content="中国発・日本向け男性ダンス配信グループ「XL-001彗星」の非公式ファンアーカイブ。7名のプロフィール、応援コメントコピー、配信目安やWebチャージ案内を掲載。">
+  <meta name="description" content="中国発・日本向け男性ダンス配信グループ「XL-001彗星」の非公式ファンアーカイブ。7名のプロフィール、応援アイテム、個人TikTok・ピックアップ動画プレイヤー、応援コメントコピー、配信目安やWebチャージ案内を掲載。">
   <meta property="og:type" content="website">
   <meta property="og:title" content="XL-001 彗星 | UNOFFICIAL OBSERVATION ARCHIVE">
   <meta property="og:description" content="深宇宙を駆ける7つの光跡を観測・記録する非公式ファンアーカイブ（Presented by SHINMICHI ARCHIVE）。">
@@ -45,7 +45,6 @@
       background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 52px 52px, 52px 52px;
     }
 
-    /* プリズム屈折＆深宇宙の奥行きレイヤー */
     .cosmos-prism-layer {
       position: fixed;
       inset: 0;
@@ -97,12 +96,23 @@
       background: linear-gradient(180deg, rgba(255, 255, 255, 0.025) 0%, transparent 100%);
     }
 
+    .goal-banner {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 4px 14px;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      color: #FFFFFF;
+      background: rgba(226, 198, 145, 0.12);
+      border: 1px solid rgba(226, 198, 145, 0.45);
+    }
+
     .sys-tag {
       font-family: 'Montserrat', sans-serif;
       font-size: 0.7rem;
       letter-spacing: 0.28em;
       color: var(--gold-accent);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       display: block;
     }
 
@@ -202,7 +212,6 @@
       background: linear-gradient(90deg, rgba(226, 198, 145, 0.45), rgba(125, 211, 252, 0.2), transparent);
     }
 
-    /* スモークガラス＋プリズム縁取りパネル */
     .glass-panel {
       background: linear-gradient(145deg, rgba(255, 255, 255, 0.065) 0%, var(--glass-bg) 38%, rgba(8, 11, 22, 0.72) 100%);
       backdrop-filter: blur(18px) saturate(135%);
@@ -282,6 +291,48 @@
       pointer-events: none;
     }
 
+    .profile-top-grid {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      padding-bottom: 16px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--silver-border);
+    }
+
+    .portrait-frame {
+      width: 112px;
+      height: 112px;
+      flex-shrink: 0;
+      border: 1px solid rgba(226, 198, 145, 0.65);
+      box-shadow: 0 0 22px rgba(226, 198, 145, 0.18);
+      background: radial-gradient(circle at 30% 25%, rgba(226, 198, 145, 0.16), rgba(6, 8, 15, 0.92));
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .portrait-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .portrait-fallback {
+      font-family: 'Cinzel', serif;
+      font-size: 1.4rem;
+      letter-spacing: 0.16em;
+      color: var(--gold-accent);
+    }
+
+    .profile-head-meta {
+      flex: 1;
+      min-width: 0;
+    }
+
     .member-role {
       font-family: 'Montserrat', sans-serif;
       font-size: 0.72rem;
@@ -293,372 +344,9 @@
     .member-name-row {
       display: flex;
       align-items: baseline;
-      gap: 12px;
-      padding-bottom: 14px;
-      margin-bottom: 16px;
-      border-bottom: 1px solid var(--silver-border);
-    }
-
-    .member-jp { font-size: 1.55rem; font-weight: 500; letter-spacing: 0.14em; }
-    .member-en { font-family: 'Cinzel', serif; font-size: 0.95rem; color: var(--text-sub); letter-spacing: 0.2em; }
-    .member-desc { font-size: 0.94rem; color: var(--text-main); line-height: 1.9; }
-
-    .personal-comms-box {
-      margin-top: 22px;
-      padding-top: 16px;
-      border-top: 1px solid rgba(255, 255, 255, 0.12);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .comms-label {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.7rem;
-      letter-spacing: 0.18em;
-      color: rgba(255, 255, 255, 0.55);
-    }
-
-    .comms-link-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 7px 16px;
-      background: rgba(226, 198, 145, 0.1);
-      border: 1px solid rgba(226, 198, 145, 0.6);
-      color: var(--gold-accent);
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.78rem;
-      letter-spacing: 0.1em;
-      text-decoration: none;
-      transition: all 0.25s ease;
-    }
-
-    .comms-link-btn:hover {
-      background: rgba(226, 198, 145, 0.2);
-    }
-
-    .comms-link-disabled {
-      display: inline-block;
-      padding: 6px 14px;
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      color: rgba(255, 255, 255, 0.38);
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.7rem;
-      letter-spacing: 0.14em;
-    }
-
-    .terminal-note { font-size: 0.84rem; color: var(--text-sub); margin-bottom: 16px; }
-    .phrase-list { display: grid; gap: 10px; }
-
-    .phrase-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       gap: 12px;
-      padding: 12px 16px;
-      background: linear-gradient(90deg, rgba(255, 255, 255, 0.035), rgba(125, 211, 252, 0.02));
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      margin-bottom: 10px;
     }
 
-    .phrase-cn { font-size: 1rem; color: #FFFFFF; letter-spacing: 0.06em; }
-    .phrase-jp { font-size: 0.78rem; color: var(--text-sub); margin-top: 2px; }
-
-    .copy-btn {
-      background: rgba(226, 198, 145, 0.06);
-      border: 1px solid var(--gold-dim);
-      color: var(--gold-accent);
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.72rem;
-      letter-spacing: 0.14em;
-      padding: 7px 14px;
-      cursor: pointer;
-      white-space: nowrap;
-      transition: all 0.2s ease;
-    }
-
-    .copy-btn:hover {
-      background: rgba(226, 198, 145, 0.16);
-      border-color: var(--gold-accent);
-    }
-
-    .copy-btn.copied { background: var(--gold-accent); color: #06080F; font-weight: 500; }
-
-    .info-grid { display: grid; gap: 18px; }
-    .info-block h3 { font-size: 0.95rem; color: var(--gold-accent); letter-spacing: 0.1em; margin-bottom: 6px; font-weight: 500; }
-    .info-block p { font-size: 0.88rem; color: var(--text-sub); }
-
-    .web-charge-link {
-      display: inline-block;
-      margin-top: 10px;
-      color: var(--gold-accent);
-      font-size: 0.84rem;
-      text-decoration: none;
-      border-bottom: 1px solid var(--gold-dim);
-      padding-bottom: 2px;
-    }
-
-    footer {
-      text-align: center;
-      padding-top: 32px;
-      border-top: 1px solid var(--silver-border);
-      font-size: 0.78rem;
-      color: var(--text-sub);
-    }
-
-    .disclaimer {
-      max-width: 640px;
-      margin: 0 auto 16px;
-      line-height: 1.7;
-      font-size: 0.75rem;
-      color: rgba(255, 255, 255, 0.48);
-    }
-
-    .archive-credit {
-      font-family: 'Cinzel', serif;
-      letter-spacing: 0.24em;
-      color: var(--gold-accent);
-      font-size: 0.8rem;
-    }
-  </style>
-</head>
-<body>
-  <div class="cosmos-prism-layer" aria-hidden="true"></div>
-  <div class="starfield-layer" aria-hidden="true"></div>
-
-  <main class="main-wrapper">
-    <header>
-      <span class="sys-tag">UNOFFICIAL OBSERVATION TERMINAL // JP</span>
-      <h1>XL-001 彗星</h1>
-      <p class="subtitle">深宇宙を駆ける7つの光跡を観測・記録する非公式ファンアーカイブ</p>
-      <div class="portal-links">
-        <a href="https://www.tiktok.com/@sofiatori64" target="_blank" rel="noopener noreferrer" class="btn-portal">
-          <span class="btn-portal-label">MAIN STREAM // 01</span>
-          <span class="btn-portal-main">XL-001彗星 (@sofiatori64) ↗</span>
-        </a>
-        <a href="https://www.tiktok.com/@xl0027788" target="_blank" rel="noopener noreferrer" class="btn-portal sub">
-          <span class="btn-portal-label">SUB STREAM // 02</span>
-          <span class="btn-portal-main">XL-002彗星 (@xl0027788) ↗</span>
-        </a>
-      </div>
-    </header>
-
-    <section>
-      <div class="sec-header">
-        <span class="sec-num">01</span>
-        <h2 class="sec-title">PERSONNEL ARCHIVE</h2>
-        <div class="sec-line"></div>
-      </div>
-
-      <div class="tabs-nav" id="tabs-nav"></div>
-
-      <div class="glass-panel">
-        <div class="watermark-en" id="wm-en">KAZUKI</div>
-        <div class="member-role" id="m-role">SINCERE PERFORMER</div>
-        <div class="member-name-row">
-          <span class="member-jp" id="m-jp">和希</span>
-          <span class="member-en" id="m-en">KAZUKI</span>
-        </div>
-        <p class="member-desc" id="m-desc"></p>
-
-        <div class="personal-comms-box">
-          <span class="comms-label">PERSONAL FREQUENCY // TIKTOK</span>
-          <div id="member-tiktok-area"></div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="sec-header">
-        <span class="sec-num">02</span>
-        <h2 class="sec-title">TRANSMISSION TERMINAL</h2>
-        <div class="sec-line"></div>
-      </div>
-
-      <div class="glass-panel">
-        <p class="terminal-note">配信中のコメント欄にそのまま貼り付けて使える応援フレーズです。タップでコピーできます。</p>
-        <div class="phrase-list" id="phrase-list"></div>
-      </div>
-    </section>
-
-    <section>
-      <div class="sec-header">
-        <span class="sec-num">03</span>
-        <h2 class="sec-title">SYSTEM &amp; ACCESS</h2>
-        <div class="sec-line"></div>
-      </div>
-
-      <div class="glass-panel info-grid">
-        <div class="info-block">
-          <h3>OBSERVATION SCHEDULE // 配信時間帯の目安</h3>
-          <p>日本時間 18:00 〜 24:00 頃にメイン枠（@sofiatori64）または予備枠（@xl0027788）にてライブ配信が行われます。日本語の挨拶やコメントにも誠実に応えてくれます。</p>
-        </div>
-        <div class="info-block">
-          <h3>SUPPORT GUIDE // お得なWebブラウザ版チャージ</h3>
-          <p>TikTokアプリ内から直接コインを購入するよりも、公式Webブラウザ版からチャージすることで手数料が抑えられ、約25〜30%お得に応援ギフトを送ることができます。</p>
-          <a href="https://www.tiktok.com/coin" target="_blank" rel="noopener noreferrer" class="web-charge-link">TikTok公式Webチャージページを開く ↗</a>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <p class="disclaimer">
-        【免責事項 / DISCLAIMER】<br>
-        当サイトは日本の個人制作者による完全非公式のファンアーカイブであり、所属事務所・運営会社・メンバー本人とは一切関係ありません。著作権および規約遵守のため、公式画像や配信スクリーンショットの無断転載は行っておりません。
-      </p>
-      <p class="archive-credit">Presented by SHINMICHI ARCHIVE</p>
-    </footer>
-  </main>
-
-  <script>
-    const membersData = [
-      {
-        enName: "KAZUKI",
-        jpName: "和希",
-        role: "SINCERE PERFORMER",
-        tiktokId: "",
-        tiktokLabel: "",
-        desc: "ステージで見せる端正なダンスと、休演日のオフ配信（キッチン配信等）で見せる家庭的な素顔のギャップが魅力の努力家。ちいかわ、クレヨンしんちゃん、RADWIMPSなど日本のカルチャーを愛し、コメント一つひとつにも真摯に答える誠実な青年。"
-      },
-      {
-        enName: "KK",
-        jpName: "キキ",
-        role: "ABSOLUTE CENTER & ACE",
-        tiktokId: "kk",
-        tiktokLabel: "@kk✨",
-        desc: "24歳・絶対的センター＆エース。鍛え抜かれた筋肉質なスタイルと圧倒的なダンススキルを持ち、常にセンターでチームを牽引。カメラの目の前まで迫る強烈なファンサービスが持ち味。"
-      },
-      {
-        enName: "MIO",
-        jpName: "澪",
-        role: "PURE & HEALING",
-        tiktokId: "",
-        tiktokLabel: "",
-        desc: "透明感ある佇まいと柔らかな笑顔が魅力の癒やし系メンバー。見る人の心を解きほぐす軽やかなパフォーマンスが特徴（担当ギフト目安：アイスクリーム 157コインなど）。"
-      },
-      {
-        enName: "TANJUN",
-        jpName: "単純",
-        role: "BRIGHT & PASSIONATE",
-        tiktokId: "",
-        tiktokLabel: "",
-        desc: "真っ直ぐな情熱と全力パフォーマンスでチームの空気を明るく照らす愛されキャラクター。観る者にエネルギーを届けるストレートな表現力が武器。"
-      },
-      {
-        enName: "AME",
-        jpName: "雨",
-        role: "COOL & SWEET",
-        tiktokId: "",
-        tiktokLabel: "",
-        desc: "洗練されたシルエットと繊細な表現力、そしてふとした瞬間に見せる甘い笑顔のギャップが魅力。静と動のコントラストで視線を奪う。"
-      },
-      {
-        enName: "SHIN",
-        jpName: "真",
-        role: "ROYAL VISUAL",
-        tiktokId: "",
-        tiktokLabel: "",
-        desc: "端正な顔立ちと気品ある立ち姿でフォーメーション全体を美しく引き締める王道ビジュアル担当。一挙手一投足に凛とした華がある。"
-      },
-      {
-        enName: "KOUKI",
-        jpName: "航希",
-        role: "DYNAMIC & STAMINA",
-        tiktokId: "",
-        tiktokLabel: "",
-        desc: "長身を活かしたスケールの大きいダイナミックなダンスと、配信終盤まで一切落ちない圧倒的なスタミナが武器の情熱派。"
-      }
-    ];
-
-    const phrasesData = [
-      { cn: "晚上好！从日本来应援你们✨", jp: "こんばんは！日本から応援しています✨" },
-      { cn: "跳舞太帅了！！", jp: "ダンスがすごくかっこいいです！！" },
-      { cn: "和希加油！一直在支持你🤍", jp: "和希がんばれ！ずっと応援してるよ🤍" },
-      { cn: "KK好帅！舞台魅力满分🔥", jp: "キキかっこいい！ステージの魅力満点🔥" },
-      { cn: "辛苦了，注意休息哦！", jp: "お疲れさま、ゆっくり休んでね！" }
-    ];
-
-    const tabsContainer = document.getElementById("tabs-nav");
-    membersData.forEach((m, idx) => {
-      const btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "tab-btn" + (idx === 0 ? " active" : "");
-      btn.textContent = m.jpName + " // " + m.enName;
-      btn.onclick = () => selectMember(idx);
-      tabsContainer.appendChild(btn);
-    });
-
-    function selectMember(index) {
-      document.querySelectorAll(".tab-btn").forEach((b, i) => {
-        b.classList.toggle("active", i === index);
-      });
-      const m = membersData[index];
-      document.getElementById("wm-en").textContent = m.enName;
-      document.getElementById("m-role").textContent = m.role;
-      document.getElementById("m-jp").textContent = m.jpName;
-      document.getElementById("m-en").textContent = m.enName;
-      document.getElementById("m-desc").textContent = m.desc;
-
-      const tiktokArea = document.getElementById("member-tiktok-area");
-      const cleanId = (m.tiktokId || "").trim().replace(/^@/, "");
-      if (cleanId !== "") {
-        const label = (m.tiktokLabel && m.tiktokLabel.trim() !== "") ? m.tiktokLabel : "@" + cleanId;
-        tiktokArea.innerHTML = '<a href="https://www.tiktok.com/@' + encodeURIComponent(cleanId) + '" target="_blank" rel="noopener noreferrer" class="comms-link-btn"><span>ACCESS ' + label + '</span><span>↗</span></a>';
-      } else {
-        tiktokArea.innerHTML = '<span class="comms-link-disabled">SIGNAL ENCRYPTED // NO PUBLIC ID</span>';
-      }
-    }
-
-    function copyTextFallback(text) {
-      const textarea = document.createElement("textarea");
-      textarea.value = text;
-      textarea.setAttribute("readonly", "");
-      textarea.style.position = "fixed";
-      textarea.style.opacity = "0";
-      document.body.appendChild(textarea);
-      textarea.select();
-      try {
-        document.execCommand("copy");
-      } finally {
-        document.body.removeChild(textarea);
-      }
-    }
-
-    function showCopiedState(btn) {
-      btn.textContent = "COPIED";
-      btn.classList.add("copied");
-      setTimeout(() => {
-        btn.textContent = "COPY";
-        btn.classList.remove("copied");
-      }, 1500);
-    }
-
-    const phraseList = document.getElementById("phrase-list");
-    phrasesData.forEach((p) => {
-      const item = document.createElement("div");
-      item.className = "phrase-item";
-      item.innerHTML = '<div><div class="phrase-cn">' + p.cn + '</div><div class="phrase-jp">' + p.jp + '</div></div><button type="button" class="copy-btn">COPY</button>';
-      const btn = item.querySelector(".copy-btn");
-      btn.onclick = () => {
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(p.cn).then(() => {
-            showCopiedState(btn);
-          }).catch(() => {
-            copyTextFallback(p.cn);
-            showCopiedState(btn);
-          });
-        } else {
-          copyTextFallback(p.cn);
-          showCopiedState(btn);
-        }
-      };
-      phraseList.appendChild(item);
-    });
-
-    selectMember(0);
-  </script>
-</body>
-</html>
+    .member-jp { font-size: 1.55rem; font-weight: 500; letter-spacing:
